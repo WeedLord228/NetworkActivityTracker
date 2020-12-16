@@ -12,6 +12,7 @@ import io.ktor.client.*
 import io.ktor.client.engine.apache.*
 import kotlin.test.*
 import io.ktor.server.testing.*
+import ru.y.module
 
 class ApplicationTest {
     @Test
@@ -19,7 +20,7 @@ class ApplicationTest {
         withTestApplication({ module(testing = true) }) {
             handleRequest(HttpMethod.Get, "/").apply {
                 assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals("HELLO WORLD!", response.content)
+                assertEquals("Wow wow wow wow wow wow", response.content)
             }
         }
     }
